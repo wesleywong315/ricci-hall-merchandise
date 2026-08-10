@@ -1,0 +1,11 @@
+/* fonts.css — Ricci Hall type system
+   Bebas Neue     -> display / titles / subtitles (condensed collegiate feel)
+   Tangerine      -> accent script for the Latin hall motto only
+   League Spartan -> body copy, UI text, buttons, labels
+   Font <link> tags live in index.html <head> (with preconnect) for best load performance.
+*/
+:root {
+  --font-display: 'Bebas Neue', 'Oswald', 'Helvetica Neue', sans-serif;
+  --font-accent: 'Tangerine', 'Snell Roundhand', cursive;
+  --font-body: 'League Spartan', 'Segoe UI', sans-serif;
+}

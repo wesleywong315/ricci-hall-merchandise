@@ -1,0 +1,23 @@
+# Secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# Dependencies and logs
+node_modules/
+**/node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Local tooling
+.DS_Store
+**/.DS_Store
+.vscode/
+
+# Runtime workbook containing orders and customer data
+ricci-hall-server/data/*.xlsx

@@ -1,0 +1,20 @@
+{
+  "name": "ricci-hall-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend API for Ricci Hall Merchandise Store — Excel-backed inventory, Stripe checkout, order log.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "nodemailer": "^9.0.5",
+    "stripe": "^16.12.0",
+    "uuid": "^9.0.1",
+    "xlsx": "^0.18.5"
+  }
+}

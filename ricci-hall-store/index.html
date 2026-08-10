@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ricci Hall Store — Official HKU Ricci Hall Merchandise</title>
+  <meta name="description" content="Official merchandise store for Ricci Hall, The University of Hong Kong. Shop hall gear for current residents and alumni — new releases, classic inventory, secure checkout." />
+  <meta property="og:title" content="Ricci Hall Store" />
+  <meta property="og:description" content="Official merchandise store for Ricci Hall, HKU. Riccians since 1929." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Tangerine:wght@400;700&family=League+Spartan:wght@300..800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/fonts.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <link rel="icon" href="./assets/ricci-crest-black.png" />
+</head>
+<body>
+  <a href="#/" class="skip-link">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#/" class="brand" data-nav-link="/">
+        <span class="theme-crest theme-crest--brand" aria-hidden="true">
+          <img class="crest-light" src="./assets/ricci-crest-black.png" alt="" width="500" height="577" />
+          <img class="crest-dark" src="./assets/ricci-crest-white.png" alt="" width="500" height="577" />
+        </span>
+        <span class="brand-text">Ricci Hall<span>HKU Merchandise Store</span></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a href="#/" class="nav-link" data-nav-link="/">Home</a>
+        <a href="#/store" class="nav-link" data-nav-link="/store">Store</a>
+        <a href="#/admin" class="nav-link" data-nav-link="/admin">Inventory Manager</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#/cart" class="icon-btn" data-nav-link="/cart" aria-label="View cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-badge" id="cartBadge" hidden>0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HOME ============ -->
+    <section class="view" id="view-home" data-view="/">
+      <div class="hero">
+        <div class="hero-gallery" aria-hidden="true">
+          <img class="hero-slide" src="./assets/hero-gallery-1.jpg" alt="" width="1600" height="1067" fetchpriority="high" decoding="async" />
+          <img class="hero-slide" src="./assets/hero-gallery-2.jpg" alt="" width="1600" height="1067" loading="lazy" decoding="async" />
+          <img class="hero-slide" src="./assets/hero-gallery-3.jpg" alt="" width="1600" height="1067" loading="lazy" decoding="async" />
+          <img class="hero-slide" src="./assets/hero-gallery-4.jpg" alt="" width="1600" height="1067" loading="lazy" decoding="async" />
+        </div>
+        <div class="container hero-inner">
+          <img class="hero-crest" src="./assets/ricci-crest-white.png" alt="Ricci Hall crest" width="500" height="577" />
+          <span class="hero-eyebrow">Riccians since 1929 · The University of Hong Kong</span>
+          <h1 class="hero-title">Ricci Hall<br />Merchandise Store</h1>
+          <p class="hero-motto">Once a Riccian, always a Riccian</p>
+          <p class="hero-lede">Official hall gear for current residents and alumni. Every purchase supports Hall life, traditions and the Riccians who come after us.</p>
+          <div class="hero-actions">
+            <a href="#/store" class="btn btn--primary" data-nav-link="/store">Shop the Collection</a>
+            <a href="#/store?category=new-release" class="btn btn--outline">See New Releases</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Fresh drops</span>
+            <h2 class="section-title">New Releases</h2>
+            <p class="section-sub">The latest additions to the Hall collection.</p>
+          </div>
+          <a href="#/store?category=new-release" class="btn btn--outline btn--sm">View all</a>
+        </div>
+        <div class="product-grid" id="homeNewReleases">
+          <!-- injected by app.js -->
+        </div>
+      </div>
+
+      <div class="section container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Why shop with us</span>
+            <h2 class="section-title">Made for Riccians</h2>
+          </div>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6L9 17l-5-5"/></svg>
+            <h3>Secure Checkout</h3>
+            <p>Payments are processed securely and settle directly to the Hall's bank account.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>
+            <h3>Real-Time Inventory</h3>
+            <p>Stock levels are tracked live, so what you see in the Store is what's actually available.</p>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7Z"/></svg>
+            <h3>Once Always</h3>
+            <p>Available to all alumnis and current students</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT DETAIL ============ -->
+    <section class="view" id="view-product" data-view="/product">
+      <div class="section container">
+        <a href="#/store" class="back-link" data-nav-link="/store">← Back to Store</a>
+        <div id="productDetail" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============ STORE ============ -->
+    <section class="view" id="view-store" data-view="/store">
+      <div class="section container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">The Collection</span>
+            <h2 class="section-title">Store</h2>
+            <p class="section-sub">Browse everyday Hall inventory and the newest limited drops.</p>
+          </div>
+        </div>
+
+        <div class="store-toolbar">
+          <div class="tabs" role="tablist" aria-label="Product category">
+            <button class="tab" role="tab" data-category="inventory" aria-selected="true">Inventory</button>
+            <button class="tab" role="tab" data-category="new-release" aria-selected="false">New Releases</button>
+          </div>
+          <input type="search" class="search-input" id="storeSearch" placeholder="Search products…" aria-label="Search products" />
+        </div>
+
+        <div id="storeGrid" class="product-grid" aria-live="polite">
+          <!-- injected by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CART ============ -->
+    <section class="view" id="view-cart" data-view="/cart">
+      <div class="section container container--narrow">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Your Bag</span>
+            <h2 class="section-title">Shopping Cart</h2>
+          </div>
+        </div>
+
+        <div id="cartBanner"></div>
+
+        <div id="cartEmpty" class="empty-state" hidden>
+          <h3>Your cart is empty</h3>
+          <p>Browse the Store to add some Hall gear.</p>
+          <div style="margin-top: var(--space-6)">
+            <a href="#/store" class="btn btn--primary" data-nav-link="/store">Go to Store</a>
+          </div>
+        </div>
+
+        <div id="cartContent" class="cart-layout" hidden>
+          <div class="cart-list" id="cartList"></div>
+
+          <aside class="summary-card">
+            <h3 class="section-title" style="font-size: var(--text-lg); margin-bottom: var(--space-4);">Order Summary</h3>
+            <div class="summary-row"><span>Subtotal</span><span id="summarySubtotal">HK$0</span></div>
+            <div class="summary-row"><span>Collection</span><span>Pickup at Ricci Hall</span></div>
+            <div class="summary-row"><span>Shipping</span><span>Work in Progress</span></div>
+            <div class="summary-total"><span>Total</span><span id="summaryTotal">HK$0</span></div>
+
+            <form class="checkout-form" id="checkoutForm">
+              <label class="field-label" for="checkoutName">Name</label>
+              <input class="text-input" type="text" id="checkoutName" autocomplete="name" placeholder="Your full name" required />
+              <label class="field-label" for="checkoutYear">Year of Entry into Ricci</label>
+              <input class="text-input" type="number" id="checkoutYear" inputmode="numeric" min="1929" max="2100" placeholder="e.g. 2024" required />
+              <label class="field-label" for="checkoutEmail">Email for receipt</label>
+              <input class="text-input" type="email" id="checkoutEmail" autocomplete="email" placeholder="you@connect.hku.hk" required />
+              <button type="submit" class="btn btn--primary btn--block" style="margin-top: var(--space-4)" id="checkoutBtn">
+                Proceed to Payment
+              </button>
+            </form>
+
+            <ul class="trust-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Secure checkout via Stripe</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Funds settle directly to Ricci Hall's bank account</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg> Pickup at Ricci Hall</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v10M12 17v.01"/><circle cx="12" cy="12" r="10"/></svg> Shipping (Work in Progress)</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ADMIN ============ -->
+    <section class="view" id="view-admin" data-view="/admin">
+      <div class="section container">
+        <div id="adminGate" class="admin-gate">
+          <span class="theme-crest theme-crest--admin" aria-hidden="true">
+            <img class="crest-light" src="./assets/ricci-crest-black.png" alt="" width="500" height="577" />
+            <img class="crest-dark" src="./assets/ricci-crest-white.png" alt="" width="500" height="577" />
+          </span>
+          <h2 class="section-title" style="margin-top:var(--space-4)">Inventory Manager</h2>
+          <p class="section-sub" style="margin: var(--space-3) auto var(--space-6);">Enter the admin key to manage products, stock and view orders.</p>
+          <form id="adminLoginForm" class="form-grid">
+            <input class="text-input" type="password" id="adminKeyInput" placeholder="Admin key" autocomplete="off" required />
+            <button type="submit" class="btn btn--primary btn--block">Unlock</button>
+          </form>
+          <p class="helper-text" style="margin-top:var(--space-4)">Inventory access requires the private <code>ADMIN_KEY</code> configured on the server.</p>
+        </div>
+
+        <div id="adminShell" class="admin-shell" hidden>
+          <div class="admin-toolbar">
+            <div>
+              <span class="eyebrow">Behind the counter</span>
+              <h2 class="section-title">Inventory Manager</h2>
+            </div>
+            <div style="display:flex; gap: var(--space-3); flex-wrap: wrap;">
+              <a id="downloadExcelLink" class="btn btn--outline btn--sm" href="#">Download Excel</a>
+              <button class="btn btn--ghost btn--sm" id="adminLogoutBtn">Log out</button>
+            </div>
+          </div>
+
+          <div class="stat-grid" id="adminStats"></div>
+
+          <div class="admin-tabs" role="tablist">
+            <button class="admin-tab" role="tab" data-admin-tab="products" aria-selected="true">Products</button>
+            <button class="admin-tab" role="tab" data-admin-tab="orders" aria-selected="false">Orders</button>
+            <button class="admin-tab" role="tab" data-admin-tab="accounts" aria-selected="false">Accounts</button>
+          </div>
+
+          <div id="adminProductsPanel">
+            <div id="adminProductsList" class="admin-product-groups"></div>
+            <div class="admin-add-product">
+              <span>
+                <strong>Add another product</strong>
+                <small>Create a listing, then add and manage its size tiers above.</small>
+              </span>
+              <button class="btn btn--gold btn--sm" id="addProductBtn">+ Add Product</button>
+            </div>
+          </div>
+
+          <div id="adminOrdersPanel" hidden>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Order</th>
+                    <th>Date</th>
+                    <th>Email</th>
+                    <th>Items</th>
+                    <th class="num">Total</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="adminOrdersBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div id="adminAccountsPanel" hidden>
+            <div class="accounts-layout">
+              <div>
+                <div class="accounts-head">
+                  <div>
+                    <span class="eyebrow">Customer directory</span>
+                    <h3>Riccian Accounts</h3>
+                  </div>
+                  <span id="adminAccountCount" class="helper-text"></span>
+                </div>
+                <div id="adminAccountsList" class="accounts-list"></div>
+              </div>
+              <section id="adminAccountDetail" class="account-detail" aria-live="polite">
+                <div class="empty-state">
+                  <h3>Select an account</h3>
+                  <p>Choose a Riccian to review their account details and purchase history.</p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PRODUCT FORM MODAL ============ -->
+  <div class="modal-overlay" id="productModal" hidden>
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 class="modal-title" id="productModalTitle">Add Product</h3>
+        <button class="icon-btn" id="closeProductModal" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form id="productForm" class="form-grid">
+        <input type="hidden" id="productId" />
+        <div class="form-row">
+          <label class="field-label" for="productName">Product name</label>
+          <input class="text-input" id="productName" required placeholder="e.g. Ricci Hall Classic Hoodie" />
+        </div>
+        <div class="form-row form-row--split">
+          <div class="form-row">
+            <label class="field-label" for="productCategory">Category</label>
+            <select class="select-input" id="productCategory">
+              <option value="inventory">Inventory</option>
+              <option value="new-release">New Release</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="productSku">SKU (optional)</label>
+            <input class="text-input" id="productSku" placeholder="RH-0001" />
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="field-label" for="productPrice">Price (HKD)</label>
+          <input class="text-input" id="productPrice" type="number" min="0" step="1" required />
+        </div>
+        <div class="form-row">
+          <label class="field-label" for="productImages">Image URLs (optional)</label>
+          <textarea class="text-input" id="productImages" rows="3" placeholder="One image URL per line"></textarea>
+          <span class="helper-text">Leave blank to reserve gallery space until you upload product photos.</span>
+        </div>
+        <div class="form-row">
+          <label class="field-label" for="productDescription">Description (optional)</label>
+          <textarea class="text-input" id="productDescription" rows="3"></textarea>
+        </div>
+        <label style="display:flex; align-items:center; gap: var(--space-2); font-size: var(--text-sm);">
+          <input type="checkbox" id="productActive" checked style="width:auto;" />
+          Active (visible in Store)
+        </label>
+        <div class="form-actions">
+          <button type="button" class="btn btn--ghost" id="cancelProductForm">Cancel</button>
+          <button type="submit" class="btn btn--primary" id="saveProductBtn">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============ CANCEL ORDER CONFIRMATION ============ -->
+  <div class="modal-overlay" id="cancelOrderModal" hidden>
+    <div class="modal-card modal-card--confirm" role="dialog" aria-modal="true" aria-labelledby="cancelOrderTitle">
+      <div class="confirm-icon" aria-hidden="true">!</div>
+      <h3 class="modal-title" id="cancelOrderTitle">Cancel this order?</h3>
+      <p id="cancelOrderMessage">The order will be marked cancelled and its stock will be returned to inventory.</p>
+      <div class="cancel-reason-field">
+        <label class="field-label" for="cancelOrderReason">Cancellation reason</label>
+        <textarea class="text-input" id="cancelOrderReason" rows="4" placeholder="Explain why this order is being cancelled" required></textarea>
+      </div>
+      <div class="refund-placeholder">
+        <strong>Refund option coming later</strong>
+        <span>Stripe refunds are not connected yet. Cancelling now records the reason and restores paid-order stock.</span>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn--ghost" id="keepOrderBtn">Keep Order</button>
+        <button type="button" class="btn btn--danger btn--sm" id="confirmCancelOrderBtn">Confirm Cancellation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-motto">Once a Riccian, always a Riccian</p>
+      </div>
+      <p class="footer-meta">
+        Ricci Hall, The University of Hong Kong — 93 Pok Fu Lam Road<br />
+        Student-run merchandise store for residents &amp; alumni. Not an official HKU storefront.<br />
+        © <span id="footerYear"></span> Ricci Hall Students' Association
+      </p>
+    </div>
+  </footer>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script src="./js/config.js"></script>
+  <script src="./js/api.js"></script>
+  <script src="./js/store.js"></script>
+  <script src="./js/render.js"></script>
+  <script src="./js/admin.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
