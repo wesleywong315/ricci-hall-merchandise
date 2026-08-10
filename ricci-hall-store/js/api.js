@@ -16,6 +16,7 @@ var RicciAPI = (function () {
     }
     if (!res.ok) {
       var message = (data && data.error) || 'Request failed (' + res.status + ')';
+      if (data && data.code) message += ' [' + data.code + (data.responseCode ? ' ' + data.responseCode : '') + ']';
       var err = new Error(message);
       err.status = res.status;
       throw err;
@@ -65,6 +66,12 @@ var RicciAPI = (function () {
       },
       getCustomer: function (adminKey, id) {
         return request('/api/admin/customers/' + id, { headers: { 'x-admin-key': adminKey } });
+      },
+      testEmail: function (adminKey) {
+        return request('/api/admin/email/test', {
+          method: 'POST',
+          headers: { 'x-admin-key': adminKey },
+        });
       },
       cancelOrder: function (adminKey, id, reason) {
         return request('/api/admin/orders/' + id + '/cancel', {

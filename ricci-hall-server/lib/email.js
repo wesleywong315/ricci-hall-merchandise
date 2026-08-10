@@ -78,8 +78,21 @@ async function sendCancellationEmail(order) {
   });
 }
 
+async function sendTestEmail() {
+  return sendMail({
+    to: process.env.GMAIL_USER,
+    subject: 'Ricci Hall Merchandise email test',
+    text: [
+      'Ricci Hall Merchandise email is configured correctly.',
+      '',
+      `Test sent at ${new Date().toISOString()}.`,
+    ].join('\n'),
+  });
+}
+
 module.exports = {
   isConfigured,
   sendPurchaseConfirmation,
   sendCancellationEmail,
+  sendTestEmail,
 };

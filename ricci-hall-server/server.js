@@ -112,6 +112,22 @@ app.get('/api/admin/inventory.xlsx', requireAdmin, (req, res) => {
   fs.createReadStream(excel.WORKBOOK_PATH).pipe(res);
 });
 
+app.post('/api/admin/email/test', requireAdmin, async (req, res) => {
+  try {
+    const result = await emailService.sendTestEmail();
+    if (!result.sent) return res.status(503).json({ error: 'Email is not configured', code: result.reason || 'NOT_CONFIGURED' });
+    res.json({ sent: true });
+  } catch (error) {
+    console.error('Test email error:', error.message);
+    res.status(502).json({
+      error: 'Gmail rejected the test email',
+      code: String(error.code || 'SEND_FAILED'),
+      command: String(error.command || ''),
+      responseCode: Number(error.responseCode) || 0,
+    });
+  }
+});
+
 // ---------- Orders / Checkout ----------
 app.get('/api/admin/orders', requireAdmin, (req, res) => {
   res.json(excel.getOrders());

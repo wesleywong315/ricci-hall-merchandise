@@ -69,6 +69,22 @@ var RicciAdmin = (function () {
         }
       };
     }
+    var testEmailButton = document.getElementById('testEmailBtn');
+    if (testEmailButton) {
+      testEmailButton.onclick = async function () {
+        testEmailButton.disabled = true;
+        testEmailButton.textContent = 'Sending…';
+        try {
+          await RicciAPI.admin.testEmail(key);
+          riccyToast('Test email sent to the configured Gmail account', 'success');
+        } catch (error) {
+          riccyToast(error.message || 'Test email failed', 'error');
+        } finally {
+          testEmailButton.disabled = false;
+          testEmailButton.textContent = 'Send test email';
+        }
+      };
+    }
   }
 
   function renderStats() {
