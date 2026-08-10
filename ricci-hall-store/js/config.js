@@ -1,9 +1,9 @@
 // config.js — API base resolution
-// __PORT_8000__ is replaced with the real proxy path ("port/8000") by
-// deploy_website at deploy time. Locally (before deploy) it stays literal,
-// so we fall back to localhost for local testing.
+// Local development uses the backend on port 8000. Hosted storefronts use
+// the Railway API so inventory, orders, Stripe and email share one backend.
 (function () {
-  var placeholder = '__PORT_8000__';
-  var API_BASE = placeholder.indexOf('__') === 0 ? 'http://localhost:8000' : placeholder;
-  window.RICCI_API_BASE = API_BASE;
+  var isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  window.RICCI_API_BASE = isLocal
+    ? 'http://localhost:8000'
+    : 'https://ricci-hall-merchandise-production.up.railway.app';
 })();
