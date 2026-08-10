@@ -9,7 +9,7 @@ Copy the variable names from `.env.example` into your hosting provider's environ
 - `ADMIN_KEY`: the private key used to unlock Inventory Manager.
 - `GMAIL_USER`: `riccihallmerchandise@gmail.com`.
 - `GMAIL_APP_PASSWORD`: a Google App Password generated after enabling 2-Step Verification. Do not use the normal Gmail account password.
-- `STRIPE_SECRET_KEY`: the live secret key from Stripe.
+- `STRIPE_SECRET_KEY`: a Stripe sandbox key beginning with `sk_test_` for the investor demo. Use a live key only after completing the production launch checklist.
 - `STRIPE_WEBHOOK_SECRET`: the signing secret for a Stripe webhook pointed at `/api/webhook`.
 
 Never upload or commit a real `.env` file.
@@ -27,7 +27,7 @@ Purchase confirmations are sent only after an order becomes paid. Cancellation e
 
 1. Create or activate a Stripe account for the organization responsible for sales.
 2. Complete business verification and add the bank account that should receive payouts.
-3. Add the live secret key as `STRIPE_SECRET_KEY`.
+3. Add a Stripe sandbox key beginning with `sk_test_` as `STRIPE_SECRET_KEY`. Do not use a live key for the investor demo.
 4. Create a `checkout.session.completed` webhook for `https://your-domain.example/api/webhook`.
 5. Add its signing secret as `STRIPE_WEBHOOK_SECRET`.
 6. Test the full checkout in Stripe test mode before switching to live keys.
