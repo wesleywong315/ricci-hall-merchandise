@@ -120,7 +120,7 @@ app.post('/api/admin/email/test', requireAdmin, async (req, res) => {
   } catch (error) {
     console.error('Test email error:', error.message);
     res.status(502).json({
-      error: 'Gmail rejected the test email',
+      error: 'Email connection failed',
       code: String(error.code || 'SEND_FAILED'),
       command: String(error.command || ''),
       responseCode: Number(error.responseCode) || 0,
