@@ -117,7 +117,7 @@
           var completedOrder = await RicciAPI.getOrder(query.order);
           emailMessage = completedOrder.confirmationEmailSentAt
             ? ' A confirmation email has been sent.'
-            : ' Your order is recorded; email delivery is not configured yet.';
+            : ' Your confirmation email is pending; please contact the store if it does not arrive.';
         } catch (error) {
           emailMessage = ' Your email confirmation will follow shortly.';
         }

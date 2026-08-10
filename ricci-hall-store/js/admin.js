@@ -46,7 +46,29 @@ var RicciAdmin = (function () {
     renderOrdersTable();
     renderAccounts();
     var dl = document.getElementById('downloadExcelLink');
-    if (dl) dl.href = window.RICCI_API_BASE + '/api/admin/inventory.xlsx?x-admin-key=' + encodeURIComponent(key);
+    if (dl) {
+      dl.href = '#';
+      dl.onclick = async function (event) {
+        event.preventDefault();
+        try {
+          var response = await fetch(window.RICCI_API_BASE + '/api/admin/inventory.xlsx', {
+            headers: { 'x-admin-key': key },
+          });
+          if (!response.ok) throw new Error('Download failed (' + response.status + ')');
+          var blob = await response.blob();
+          var url = URL.createObjectURL(blob);
+          var anchor = document.createElement('a');
+          anchor.href = url;
+          anchor.download = 'inventory.xlsx';
+          document.body.appendChild(anchor);
+          anchor.click();
+          anchor.remove();
+          URL.revokeObjectURL(url);
+        } catch (error) {
+          riccyToast(error.message || 'Could not download inventory', 'error');
+        }
+      };
+    }
   }
 
   function renderStats() {

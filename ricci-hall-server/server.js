@@ -48,7 +48,7 @@ app.use(express.json());
 
 function requireAdmin(req, res, next) {
   if (!ADMIN_KEY) return res.status(503).json({ error: 'Inventory Manager is not configured on this server' });
-  const key = req.headers['x-admin-key'] || req.query['x-admin-key'];
+  const key = req.headers['x-admin-key'];
   if (key !== ADMIN_KEY) return res.status(401).json({ error: 'Invalid admin key' });
   next();
 }
@@ -73,7 +73,7 @@ app.post('/api/admin/products', requireAdmin, (req, res) => {
   const body = req.body || {};
   if (!body.name || !body.name.trim()) return res.status(400).json({ error: 'Product name is required' });
   const product = {
-    id: body.id || uuidv4(),
+    id: uuidv4(),
     name: body.name.trim(),
     category: body.category === 'new-release' ? 'new-release' : 'inventory',
     price: Number(body.price) || 0,
@@ -250,7 +250,11 @@ app.post('/api/checkout', async (req, res) => {
 app.get('/api/orders/:id', (req, res) => {
   const order = excel.getOrders().find((o) => o.id === req.params.id);
   if (!order) return res.status(404).json({ error: 'Order not found' });
-  res.json(order);
+  res.json({
+    id: order.id,
+    status: order.status,
+    confirmationEmailSentAt: order.confirmationEmailSentAt || '',
+  });
 });
 
 // ---------- Seed data (first run only) ----------
