@@ -1,0 +1,13 @@
+{
+  "name": "ricci-hall-merchandise",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deployment entry point for the Ricci Hall Merchandise backend.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "postinstall": "npm --prefix ricci-hall-server ci --omit=dev",
+    "start": "npm --prefix ricci-hall-server start"
+  }
+}
