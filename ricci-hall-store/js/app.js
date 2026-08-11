@@ -316,7 +316,6 @@
     reloadPublicProducts: loadPublicProducts,
   };
 
-  document.getElementById('footerYear').textContent = String(new Date().getFullYear());
 
   window.addEventListener('hashchange', route);
 
