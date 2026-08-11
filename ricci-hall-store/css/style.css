@@ -670,6 +670,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 .product-badge {
   position: absolute;
@@ -786,6 +787,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 .product-gallery-thumbs {
   display: grid;
@@ -810,6 +812,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 .product-purchase {
   display: grid;
