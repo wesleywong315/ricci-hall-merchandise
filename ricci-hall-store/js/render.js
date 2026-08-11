@@ -15,7 +15,13 @@ function riccyNormalizeImageUrl(url) {
     driveMatch = value.match(/drive\.google\.com\/(?:open|uc)\?[^#]*\bid=([^&#]+)/i);
   }
   if (driveMatch && driveMatch[1]) {
-    return 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(decodeURIComponent(driveMatch[1])) + '&sz=w1600';
+    var driveId = driveMatch[1];
+    try {
+      driveId = decodeURIComponent(driveId);
+    } catch (error) {
+      return value;
+    }
+    return 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(driveId) + '&sz=w1600';
   }
   return value;
 }
