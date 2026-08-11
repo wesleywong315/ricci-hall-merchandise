@@ -6,8 +6,22 @@ var PLACEHOLDER_SVG =
   '<path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v9l9 5 9-5V8"/><path d="M12 13v9"/>' +
   '</svg></div>';
 
+function riccyNormalizeImageUrl(url) {
+  var value = String(url || '').trim();
+  if (!value) return '';
+
+  var driveMatch = value.match(/drive\.google\.com\/file\/d\/([^/?#]+)/i);
+  if (!driveMatch) {
+    driveMatch = value.match(/drive\.google\.com\/(?:open|uc)\?[^#]*\bid=([^&#]+)/i);
+  }
+  if (driveMatch && driveMatch[1]) {
+    return 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(decodeURIComponent(driveMatch[1])) + '&sz=w1600';
+  }
+  return value;
+}
+
 function riccyProductMedia(product) {
-  var image = product.imageUrl || (product.images && product.images[0]);
+  var image = riccyNormalizeImageUrl(product.imageUrl || (product.images && product.images[0]));
   if (image) {
     return '<img src="' + riccyEscapeHtml(image) + '" alt="' + riccyEscapeHtml(product.name) + '" loading="lazy" width="240" height="180" />';
   }
@@ -49,8 +63,10 @@ function riccyRenderProductDetail(product) {
     el.innerHTML = '<div class="empty-state"><h3>Product not found</h3><p>This listing may have been removed or hidden.</p></div>';
     return;
   }
-  var images = Array.isArray(product.images) ? product.images.filter(Boolean) : [];
-  if (!images.length && product.imageUrl) images = [product.imageUrl];
+  var images = Array.isArray(product.images)
+    ? product.images.filter(Boolean).map(riccyNormalizeImageUrl)
+    : [];
+  if (!images.length && product.imageUrl) images = [riccyNormalizeImageUrl(product.imageUrl)];
   var sizes = Array.isArray(product.sizes) && product.sizes.length ? product.sizes : [{ name: 'One Size', stock: product.stock }];
   var firstImage = images[0];
   var mainMedia = firstImage
